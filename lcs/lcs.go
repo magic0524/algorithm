@@ -1,6 +1,9 @@
 package lcs
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 func longestCommonSubstring(a, b string) int {
 	if len(a) == 0 || len(b) == 0 {
@@ -38,6 +41,8 @@ func longestCommonSubstring(a, b string) int {
 		}
 	}
 
+	fmt.Printf("max = %d\n", max)
+
 	return max
 }
 
@@ -71,6 +76,8 @@ func longestCommonSubsequnece(a, b string) int {
 			}
 		}
 	}
+
+	fmt.Printf("max = %d\n", lcs[len(a)][len(b)])
 
 	return lcs[len(a)][len(b)]
 }

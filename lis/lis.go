@@ -2,13 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	a := []int{0, 2, 8, 5, 3, 3, 3, 6, 7, 9, 3, 10, 5, 3, 7, 6}
-	fmt.Printf("a = %v\n", a)
-
-	lis(a)
-}
-
 func lis(a []int) int {
 	if len(a) == 0 {
 		return 0
@@ -34,7 +27,6 @@ func lis(a []int) int {
 		}
 	}
 
-	fmt.Printf("maxLen: %d\n", maxLen)
-
+	fmt.Printf("maxLen = %d\n", maxLen)
 	return maxLen
 }
