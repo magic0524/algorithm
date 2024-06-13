@@ -2,7 +2,6 @@ package min
 
 import (
 	"fmt"
-	"math"
 )
 
 func minEditDistance(a, b string) int {
@@ -24,7 +23,7 @@ func minEditDistance(a, b string) int {
 			if a[i-1] == b[j-1] {
 				dp[i][j] = dp[i-1][j-1]
 			} else {
-				dp[i][j] = 1 + int(math.Min(math.Min(float64(dp[i-1][j]), float64(dp[i][j-1])), float64(dp[i-1][j-1])))
+				dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
 			}
 		}
 	}
