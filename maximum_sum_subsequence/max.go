@@ -6,6 +6,7 @@ import (
 )
 
 func findLargestSumSubarray(arr []int, k int) int {
+	fmt.Printf("arr: %v, k: %d\n", arr, k)
 	maxSum := math.MinInt32
 	dp := make([]int, len(arr))
 	copy(dp, arr)

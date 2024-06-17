@@ -5,6 +5,7 @@ import (
 )
 
 func bakcPack01(m int, w []int, v []int) int {
+	fmt.Printf("01 backpack m: %d, w: %v, v: %v\n", m, w, v)
 	dp := make([]int, m+1)
 
 	for i := 0; i < len(w); i++ {
@@ -18,6 +19,7 @@ func bakcPack01(m int, w []int, v []int) int {
 }
 
 func backPackFull(m int, w []int, v []int) int {
+	fmt.Printf("full backpack m: %d, w: %v, v: %v\n", m, w, v)
 	dp := make([]int, m+1)
 
 	for i := 0; i <= m; i++ {

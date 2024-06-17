@@ -3,6 +3,7 @@ package warmweather
 import "fmt"
 
 func warmWeather(a []int) []int {
+	fmt.Printf("day weather = %v\n", a)
 	stack := make([]int, 0)
 	ans := make([]int, len(a))
 
