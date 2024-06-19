@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+// 只要n可以被2到n的平方根之间的任意一个数整除，那么n就不是素数
+// 优化：只需要判断2到n的平方根之间的素数是否能整除n
 func prime(a int) []int {
 	prime := make([]int, 0)
 

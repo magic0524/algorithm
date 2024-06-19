@@ -2,6 +2,7 @@ package warmweather
 
 import "fmt"
 
+// 使用单调栈解决
 func warmWeather(a []int) []int {
 	fmt.Printf("day weather = %v\n", a)
 	stack := make([]int, 0)

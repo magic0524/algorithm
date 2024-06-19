@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 使用最大堆的方法，时间复杂度为 O(nlogk)
 func main() {
 	a := []int{5, 3, 2, 1, 4, 3, 2, 1, 4, 5, 6, 7, 8, 9, 10}
 	fmt.Printf("a = %v\n", a)

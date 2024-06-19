@@ -22,6 +22,7 @@ func winer_3(n int) int {
 	return dp[n]
 }
 
+// 只要数量是k的倍数，那先手就输，因为无论先手拿多少个，后手都可以拿k个，使得剩下的数量是k的倍数
 func winer_n(n int, k int) bool {
 	return n%k != 0
 }

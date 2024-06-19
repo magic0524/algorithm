@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// dp公式：dp[i] = min(dp[i-j]+dp[j]) 1<=j<=i/2
 func min(a int) int {
 	dp := make([]int, a+1)
 	dp[0] = 0
