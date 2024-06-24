@@ -1,20 +1,19 @@
-package main
+package binary
 
 import "fmt"
 
-func main() {
-	a := []int{7, 8, 9, 1, 2, 3, 4, 5, 6}
-	fmt.Printf("a: %v\n", a)
+func binarySearch(a []int, k int) (res int) {
+	defer func() {
+		fmt.Printf("binary search a = %v\tk = %d\tres = %d\n", a, k, res)
+	}()
 
-	fmt.Printf("Index of 1: %d\n", binarySearch(a, 1))
-	fmt.Printf("Index of 9: %d\n", binarySearch(a, 9))
-	fmt.Printf("Index of -1: %d\n", binarySearch(a, -1))
-	fmt.Printf("Index of 10: %d\n", binarySearch(a, 10))
-	fmt.Printf("Index of 0: %d\n", binarySearch(a, 0))
-}
+	if len(a) == 1 {
+		if a[0] == k {
+			return 0
+		}
+		return -1
+	}
 
-func binarySearch(a []int, k int) int {
-	fmt.Printf("k = %d\n", k)
 	mid := len(a) / 2
 	left := 0
 	right := len(a) - 1
@@ -48,4 +47,43 @@ func binarySearch(a []int, k int) int {
 	}
 
 	return -1
+}
+
+func binarySearchMin(a []int) (res int) {
+	defer func() {
+		fmt.Printf("binary search min a = %v\tres = %d\n", a, res)
+	}()
+
+	if len(a) <= 0 {
+		return -1
+	}
+
+	if len(a) == 1 {
+		return a[0]
+	}
+
+	if len(a) == 2 {
+		if a[0] > a[1] {
+			return a[1]
+		}
+		return a[0]
+	}
+
+	mid := len(a) / 2
+	start := 0
+	end := len(a)
+
+	for start < end {
+		if a[mid] > a[start] {
+			// 左边是递增
+			start = mid
+			mid = (end-start)/2 + start
+		} else {
+			// 左边是递增
+			end = mid
+			mid = (end-start)/2 + start
+		}
+	}
+
+	return a[mid+1]
 }
