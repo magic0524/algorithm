@@ -3,29 +3,28 @@ package bracket
 import "fmt"
 
 func bracketMax(s string) int {
+	fmt.Printf("========================\n")
 	stack := make([]int, 0)
-	maxNum := 0
-	curNum := 0
+	maxAns := 0
 
 	defer func() {
-		fmt.Printf("========================\n")
-		fmt.Printf("s: %s\tmaxNum: %d\n", s, maxNum)
+		fmt.Printf("s: %s\tmaxAns: %d\n", s, maxAns)
 	}()
 
-	for i, v := range s {
-		if v == '(' {
+	stack = append(stack, -1)
+	for i := 0; i < len(s); i++ {
+		if s[i] == '(' {
 			stack = append(stack, i)
 		} else {
+			stack = stack[:len(stack)-1]
 			if len(stack) == 0 {
-				curNum = 0
-				continue
+				stack = append(stack, i)
 			} else {
-				stack = stack[:len(stack)-1]
-				curNum += 2
-				maxNum = max(maxNum, curNum)
+				maxAns = max(maxAns, i-stack[len(stack)-1])
 			}
 		}
+		fmt.Printf("i: %d\tstack: %v\n", i, stack)
 	}
 
-	return maxNum
+	return maxAns
 }

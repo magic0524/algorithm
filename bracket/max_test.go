@@ -41,6 +41,16 @@ func Test_bracketMax(t *testing.T) {
 			args: args{s: ")(()))()()(()))"},
 			want: 8,
 		},
+		{
+			name: "test case 7",
+			args: args{s: "()(()"},
+			want: 2,
+		},
+		{
+			name: "test case 8",
+			args: args{s: "()()"},
+			want: 4,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
