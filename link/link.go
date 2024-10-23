@@ -34,7 +34,7 @@ func printLink(head *ListNode) {
 	fmt.Println()
 }
 
-func reverLink(head *ListNode) *ListNode {
+func revertLink(head *ListNode) *ListNode {
 	printLink(head)
 	var pre *ListNode
 	cur := head
@@ -67,7 +67,7 @@ func isPalindrome(head *ListNode) bool {
 		slow = slow.Next
 	}
 
-	slow = reverLink(slow)
+	slow = revertLink(slow)
 	printLink(head)
 
 	for i := 0; i < slowCnt-1; i++ {

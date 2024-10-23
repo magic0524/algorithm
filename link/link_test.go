@@ -29,7 +29,7 @@ func Test_oddEvenLink(t *testing.T) {
 	}
 }
 
-func Test_reverLink(t *testing.T) {
+func Test_revertLink(t *testing.T) {
 	type args struct {
 		head *ListNode
 	}
@@ -48,7 +48,7 @@ func Test_reverLink(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			reverLink(tt.args.head)
+			revertLink(tt.args.head)
 		})
 	}
 }
